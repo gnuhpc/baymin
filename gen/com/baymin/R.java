@@ -257,6 +257,25 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int barSize=0x7f01009f;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int bordercolor=0x7f0100af;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int borderwidth=0x7f0100ae;
         /**  A style that may be applied to Buttons placed within a
              LinearLayout with the style buttonBarStyle to form a button bar. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -2888,6 +2907,134 @@ containing a value of this type.
           @attr name com.baymin:initialActivityCount
         */
         public static int ActivityChooserView_initialActivityCount = 0;
+        /** Attributes that can be used with a BottomUI.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #BottomUI_iconclick com.baymin:iconclick}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomUI_iconunclick com.baymin:iconunclick}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomUI_text com.baymin:text}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomUI_textclickcolor com.baymin:textclickcolor}</code></td><td></td></tr>
+           <tr><td><code>{@link #BottomUI_textunclickcolor com.baymin:textunclickcolor}</code></td><td></td></tr>
+           </table>
+           @see #BottomUI_iconclick
+           @see #BottomUI_iconunclick
+           @see #BottomUI_text
+           @see #BottomUI_textclickcolor
+           @see #BottomUI_textunclickcolor
+         */
+        public static final int[] BottomUI = {
+            0x7f0100a9, 0x7f0100aa, 0x7f0100ab, 0x7f0100ac,
+            0x7f0100ad
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#iconclick}
+          attribute's value can be found in the {@link #BottomUI} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.baymin:iconclick
+        */
+        public static int BottomUI_iconclick = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#iconunclick}
+          attribute's value can be found in the {@link #BottomUI} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.baymin:iconunclick
+        */
+        public static int BottomUI_iconunclick = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#text}
+          attribute's value can be found in the {@link #BottomUI} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.baymin:text
+        */
+        public static int BottomUI_text = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#textclickcolor}
+          attribute's value can be found in the {@link #BottomUI} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.baymin:textclickcolor
+        */
+        public static int BottomUI_textclickcolor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#textunclickcolor}
+          attribute's value can be found in the {@link #BottomUI} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.baymin:textunclickcolor
+        */
+        public static int BottomUI_textunclickcolor = 0;
+        /** Attributes that can be used with a CircleImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CircleImageView_bordercolor com.baymin:bordercolor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleImageView_borderwidth com.baymin:borderwidth}</code></td><td></td></tr>
+           </table>
+           @see #CircleImageView_bordercolor
+           @see #CircleImageView_borderwidth
+         */
+        public static final int[] CircleImageView = {
+            0x7f0100ae, 0x7f0100af
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#bordercolor}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.baymin:bordercolor
+        */
+        public static int CircleImageView_bordercolor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.baymin.R.attr#borderwidth}
+          attribute's value can be found in the {@link #CircleImageView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.baymin:borderwidth
+        */
+        public static int CircleImageView_borderwidth = 0;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>
@@ -6250,87 +6397,5 @@ containing a value of this type.
           @attr name android:layout
         */
         public static int ViewStubCompat_android_layout = 1;
-        /** Attributes that can be used with a bayminui.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #bayminui_iconclick com.baymin:iconclick}</code></td><td></td></tr>
-           <tr><td><code>{@link #bayminui_iconunclick com.baymin:iconunclick}</code></td><td></td></tr>
-           <tr><td><code>{@link #bayminui_text com.baymin:text}</code></td><td></td></tr>
-           <tr><td><code>{@link #bayminui_textclickcolor com.baymin:textclickcolor}</code></td><td></td></tr>
-           <tr><td><code>{@link #bayminui_textunclickcolor com.baymin:textunclickcolor}</code></td><td></td></tr>
-           </table>
-           @see #bayminui_iconclick
-           @see #bayminui_iconunclick
-           @see #bayminui_text
-           @see #bayminui_textclickcolor
-           @see #bayminui_textunclickcolor
-         */
-        public static final int[] bayminui = {
-            0x7f0100a9, 0x7f0100aa, 0x7f0100ab, 0x7f0100ac,
-            0x7f0100ad
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.baymin.R.attr#iconclick}
-          attribute's value can be found in the {@link #bayminui} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.baymin:iconclick
-        */
-        public static int bayminui_iconclick = 4;
-        /**
-          <p>This symbol is the offset where the {@link com.baymin.R.attr#iconunclick}
-          attribute's value can be found in the {@link #bayminui} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.baymin:iconunclick
-        */
-        public static int bayminui_iconunclick = 3;
-        /**
-          <p>This symbol is the offset where the {@link com.baymin.R.attr#text}
-          attribute's value can be found in the {@link #bayminui} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.baymin:text
-        */
-        public static int bayminui_text = 2;
-        /**
-          <p>This symbol is the offset where the {@link com.baymin.R.attr#textclickcolor}
-          attribute's value can be found in the {@link #bayminui} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.baymin:textclickcolor
-        */
-        public static int bayminui_textclickcolor = 1;
-        /**
-          <p>This symbol is the offset where the {@link com.baymin.R.attr#textunclickcolor}
-          attribute's value can be found in the {@link #bayminui} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.baymin:textunclickcolor
-        */
-        public static int bayminui_textunclickcolor = 0;
     };
 }

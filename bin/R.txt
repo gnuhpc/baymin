@@ -42,6 +42,8 @@ int attr background 0x7f01005d
 int attr backgroundSplit 0x7f01005f
 int attr backgroundStacked 0x7f01005e
 int attr barSize 0x7f01009f
+int attr bordercolor 0x7f0100af
+int attr borderwidth 0x7f0100ae
 int attr buttonBarButtonStyle 0x7f01002f
 int attr buttonBarStyle 0x7f01002e
 int attr closeIcon 0x7f01007c
@@ -747,6 +749,15 @@ int styleable ActionMode_titleTextStyle 1
 int[] styleable ActivityChooserView { 0x7f010084, 0x7f010085 }
 int styleable ActivityChooserView_expandActivityOverflowButtonDrawable 1
 int styleable ActivityChooserView_initialActivityCount 0
+int[] styleable BottomUI { 0x7f0100a9, 0x7f0100aa, 0x7f0100ab, 0x7f0100ac, 0x7f0100ad }
+int styleable BottomUI_iconclick 4
+int styleable BottomUI_iconunclick 3
+int styleable BottomUI_text 2
+int styleable BottomUI_textclickcolor 1
+int styleable BottomUI_textunclickcolor 0
+int[] styleable CircleImageView { 0x7f0100ae, 0x7f0100af }
+int styleable CircleImageView_bordercolor 1
+int styleable CircleImageView_borderwidth 0
 int[] styleable CompatTextView { 0x7f010086 }
 int styleable CompatTextView_textAllCaps 0
 int[] styleable DrawerArrowToggle { 0x7f010099, 0x7f01009a, 0x7f01009b, 0x7f01009c, 0x7f01009d, 0x7f01009e, 0x7f01009f, 0x7f0100a0 }
@@ -969,9 +980,3 @@ int[] styleable ViewStubCompat { 0x010100d0, 0x010100f2, 0x010100f3 }
 int styleable ViewStubCompat_android_id 0
 int styleable ViewStubCompat_android_inflatedId 2
 int styleable ViewStubCompat_android_layout 1
-int[] styleable bayminui { 0x7f0100a9, 0x7f0100aa, 0x7f0100ab, 0x7f0100ac, 0x7f0100ad }
-int styleable bayminui_iconclick 4
-int styleable bayminui_iconunclick 3
-int styleable bayminui_text 2
-int styleable bayminui_textclickcolor 1
-int styleable bayminui_textunclickcolor 0

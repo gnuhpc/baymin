@@ -51,7 +51,6 @@ public class TabViewPager extends ViewPager {
 			@Override
 			public void onPageSelected(int i) {
 				mUITabBottom.selectTab(i);// 刷新底部栏
-				Log.d(TAG, "selected:"+String.valueOf(i));
 			}
 
 			@Override

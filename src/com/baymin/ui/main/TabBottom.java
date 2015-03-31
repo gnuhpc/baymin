@@ -20,7 +20,7 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 		public void onTabChange(int index);
 	}
 
-	private ArrayList<TabItem> tabItems;
+	private ArrayList<TabItemBean> tabItems;
 	private TabViewPager mViewPager;
 	private OnUITabChangeListener changeListener;
 	private int[] tabIconUnClickPics;
@@ -76,7 +76,7 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 		layoutParams.weight = 1;
 
 		for (int i = 0; i < mTabCounts; i++) {
-			TabItem tabItem = new TabItem(context);
+			TabItemBean tabItem = new TabItemBean(context);
 			tabItem.setTabText(String.valueOf(tabTexts[i]));
 			tabItem.setTabTextColor(textColorUnclick);
 			tabItem.setTabIcon(tabIconClickPics[i], tabIconUnClickPics[i]);
@@ -100,17 +100,17 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 	}
 
 	private void initTabIconText(AttributeSet attrs) {
-		TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.bayminui, 0, 0);
+		TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.BottomUI, 0, 0);
 		try {
-			textColorUnclick= ta.getColor(R.styleable.bayminui_textunclickcolor, R.color.coldgray);
-			textColorClick= ta.getColor(R.styleable.bayminui_textclickcolor, R.color.white);
-			tabTexts = ta.getTextArray(R.styleable.bayminui_text);		
+			textColorUnclick= ta.getColor(R.styleable.BottomUI_textunclickcolor, R.color.coldgray);
+			textColorClick= ta.getColor(R.styleable.BottomUI_textclickcolor, R.color.white);
+			tabTexts = ta.getTextArray(R.styleable.BottomUI_text);		
 			if (tabTexts==null) {
 				throw  new IllegalStateException("Please add \"text\" attr in your UITabBottom widget");
 			}
 			mTabCounts = tabTexts.length;
-			int unclickPicResID = ta.getResourceId(R.styleable.bayminui_iconunclick, 0);
-			int clickPicResID = ta.getResourceId(R.styleable.bayminui_iconclick, 0);
+			int unclickPicResID = ta.getResourceId(R.styleable.BottomUI_iconunclick, 0);
+			int clickPicResID = ta.getResourceId(R.styleable.BottomUI_iconclick, 0);
 			if (unclickPicResID!=0 && clickPicResID!=0) {
 				TypedArray unClickIconArray = this.getResources().obtainTypedArray(unclickPicResID);
 				if (mTabCounts!=unClickIconArray.length()) {
@@ -219,6 +219,14 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 	
 	public int getmTabCounts() {
 		return mTabCounts;
+	}
+	
+	public void setTipIcon(int tabPos, int drawableRes){
+		tabItems.get(tabPos).setTipDrawable(drawableRes);
+	}
+	
+	public void setTipVisibility(int tabPos,int visibility) {
+		tabItems.get(tabPos).setDotVisibility(visibility);
 	}
 
 }

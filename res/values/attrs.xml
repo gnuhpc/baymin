@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="bayminui">
-        <attr name="textunclickcolor" format="color"/>
-        <attr name="textclickcolor" format="color"/>
-        <attr name="text" format="reference"/>
-        <attr name="iconunclick" format="reference"/>
-        <attr name="iconclick" format="reference"/>
-    </declare-styleable>    
+
+    <declare-styleable name="BottomUI">
+        <attr name="textunclickcolor" format="color" />
+        <attr name="textclickcolor" format="color" />
+        <attr name="text" format="reference" />
+        <attr name="iconunclick" format="reference" />
+        <attr name="iconclick" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="borderwidth" format="dimension" />
+        <attr name="bordercolor" format="color" />
+    </declare-styleable>
+
 </resources>
