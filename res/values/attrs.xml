@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="bayminui">
+        <attr name="textunclickcolor" format="color"/>
+        <attr name="textclickcolor" format="color"/>
+        <attr name="text" format="reference"/>
+        <attr name="iconunclick" format="reference"/>
+        <attr name="iconclick" format="reference"/>
+    </declare-styleable>    
+</resources>
