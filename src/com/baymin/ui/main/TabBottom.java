@@ -23,7 +23,7 @@ public class TabBottom extends LinearLayout implements OnClickListener,ViewPager
 		public int getFragmentCount();
 	}
 
-	private ArrayList<TabItemBean> tabItems;
+	private ArrayList<TabItem> tabItems;
 	private OnTabClickListener changeListener;
 	private int[] tabIconUnClickPics;
 	private int[] tabIconClickPics;
@@ -75,7 +75,7 @@ public class TabBottom extends LinearLayout implements OnClickListener,ViewPager
 		layoutParams.weight = 1;
 
 		for (int i = 0; i < mTabCounts; i++) {
-			TabItemBean tabItem = new TabItemBean(context);
+			TabItem tabItem = new TabItem(context);
 			tabItem.setTabText(String.valueOf(tabTexts[i]));
 			tabItem.setTabTextColor(textColorUnclick);
 			tabItem.setTabIcon(tabIconClickPics[i], tabIconUnClickPics[i]);
@@ -172,7 +172,7 @@ public class TabBottom extends LinearLayout implements OnClickListener,ViewPager
 		if (changeListener != null) {
 			changeListener.onTabClick(mIndex);
 		}
-
+		
 		//调整对应Tab的图标和文字透明度与颜色
 		tabItems.get(mIndex).setTabIconAlpha(255);
 		tabItems.get(mIndex).setTabTextColor(textColorClick);

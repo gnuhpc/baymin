@@ -28,7 +28,7 @@ public class TabViewPager extends ViewPager implements OnTabClickListener{
 	
 	@Override
 	public void onTabClick(int index) {
-		setCurrentItem(index);
+		setCurrentItem(index,false);
 	}
 
 	@Override

@@ -32,7 +32,6 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter{
 	
 	@Override
 	public Object instantiateItem (ViewGroup container, int position){
-		AppLogger.d("instantiateItem() called!");
 		Fragment fragment = (Fragment) super.instantiateItem(container, position);
 		fm.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out).show(fragment).commit();
 		return fragment;

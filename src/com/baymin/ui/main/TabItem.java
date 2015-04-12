@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public final class TabItemBean {  
+public final class TabItem {  
     private View parent;  
     private TabIconView iconView;//图片  
     private TextView labelView;//标签,如首页,我  
     private View tipView;//红点提示之类的  
     
-    public TabItemBean(Context ctx) {
+    public TabItem(Context ctx) {
     	this.parent = LayoutInflater.from(ctx).inflate(R.layout.item_main, null);
 		this.iconView = (TabIconView) this.parent.findViewById(R.id.mTabIcon);
 		this.labelView = (TextView) this.parent.findViewById(R.id.mTabText);
