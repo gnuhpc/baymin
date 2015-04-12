@@ -7,22 +7,24 @@ import org.apache.commons.lang3.NotImplementedException;
 import com.baymin.R;
 import com.baymin.log.AppLogger;
 
+import android.R.integer;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-public class TabBottom extends LinearLayout implements OnClickListener {
-	public static interface OnUITabChangeListener {
-		public void onTabChange(int index);
+public class TabBottom extends LinearLayout implements OnClickListener,ViewPager.OnPageChangeListener {
+	public static interface OnTabClickListener {
+		public void onTabClick(int index);
+		public int getFragmentCount();
 	}
 
 	private ArrayList<TabItemBean> tabItems;
-	private TabViewPager mViewPager;
-	private OnUITabChangeListener changeListener;
+	private OnTabClickListener changeListener;
 	private int[] tabIconUnClickPics;
 	private int[] tabIconClickPics;
 	private int textColorClick;
@@ -55,20 +57,17 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 		init(attrs);
 	}
 
-	public TabViewPager getmViewPager() {
-		return mViewPager;
-	}
-
-	public void setViewPager(TabViewPager mViewPager) {
-		this.mViewPager = mViewPager;
-	}
-
 	public void setTextClickColor(int unclickColor, int clickColor) {
 		textColorUnclick = getResources().getColor(unclickColor);
 		textColorClick = getResources().getColor(clickColor);
 	}
 	
-	public void init(AttributeSet attrs) {
+	/**
+	 * 初始化参数
+	 *
+	 * @param attrs the attrs
+	 */
+	private void init(AttributeSet attrs) {
 		initTabIconText(attrs);
 		
 		setOrientation(LinearLayout.HORIZONTAL);
@@ -145,11 +144,11 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 
 	}
 
-	private OnUITabChangeListener getChangeListener() {
-		return changeListener;
-	}
-
-	public void setChangeListener(OnUITabChangeListener changeListener) {
+	public void setTabClickListener(OnTabClickListener changeListener) {
+		if (changeListener!=null&&changeListener.getFragmentCount()!=mTabCounts) {
+			throw new IllegalArgumentException("The count of fragments must be equal to number of tabs at bottom");
+		}
+		
 		this.changeListener = changeListener;
 	}
 
@@ -157,16 +156,24 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 		tabItems.get(index).setDotVisibility(state);
 	}
 
+	
+	/**
+	 * 点击Tab触发的事件
+	 *
+	 * @param index the index
+	 */
 	public void selectTab(int index) {
 		if (mIndex == index) {// 重复点击同一个tab，则直接返回
 			return;
 		}
 
 		mIndex = index;
+		//切换Fragment
 		if (changeListener != null) {
-			changeListener.onTabChange(mIndex);
+			changeListener.onTabClick(mIndex);
 		}
 
+		//调整对应Tab的图标和文字透明度与颜色
 		tabItems.get(mIndex).setTabIconAlpha(255);
 		tabItems.get(mIndex).setTabTextColor(textColorClick);
 		for (int i = 0; i < mTabCounts; i++) {
@@ -213,7 +220,6 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		int i = ((Integer) v.getTag()).intValue();
-		mViewPager.setCurrentItem(i, false);
 		selectTab(i);
 	}
 	
@@ -221,12 +227,35 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 		return mTabCounts;
 	}
 	
+	/**
+	 * Sets the tip icon.
+	 *
+	 * @param tabPos TAB位置，从0开始
+	 * @param drawableRes TIP的图片，比如一个小红点
+	 */
 	public void setTipIcon(int tabPos, int drawableRes){
 		tabItems.get(tabPos).setTipDrawable(drawableRes);
+		tabItems.get(tabPos).setDotVisibility(VISIBLE);
 	}
 	
 	public void setTipVisibility(int tabPos,int visibility) {
 		tabItems.get(tabPos).setDotVisibility(visibility);
+	}
+
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPageScrolled(int pageIndex, float f, int arg2) {
+		scroll(pageIndex, f);
+	}
+
+	@Override
+	public void onPageSelected(int index) {
+		selectTab(index);
 	}
 
 }

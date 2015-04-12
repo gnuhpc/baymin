@@ -2,9 +2,12 @@ package com.baymin.ui.main;
 
 import java.util.ArrayList;
 
+import com.baymin.log.AppLogger;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
 import android.view.ViewGroup;
 
 public class TabFragmentPagerAdapter extends FragmentPagerAdapter{
@@ -27,7 +30,9 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter{
 		return fragmentList.size();
 	}
 	
-	public Fragment instantiateItem(ViewGroup container, int position) {
+	@Override
+	public Object instantiateItem (ViewGroup container, int position){
+		AppLogger.d("instantiateItem() called!");
 		Fragment fragment = (Fragment) super.instantiateItem(container, position);
 		fm.beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out).show(fragment).commit();
 		return fragment;
