@@ -2,6 +2,7 @@ package com.baymin.ui.main;
 
 import com.baymin.R;
 
+import android.R.integer;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

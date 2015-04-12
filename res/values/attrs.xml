@@ -12,5 +12,5 @@
         <attr name="borderwidth" format="dimension" />
         <attr name="bordercolor" format="color" />
     </declare-styleable>
-
+    
 </resources>

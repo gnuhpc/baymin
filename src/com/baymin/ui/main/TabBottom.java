@@ -202,7 +202,7 @@ public class TabBottom extends LinearLayout implements OnClickListener {
 		int rightAlpha = (int) (255 * f);
 		int leftColor = getColorInt(1 - f);
 		int rightColor = getColorInt(f);
-		if (index < 3) {
+		if (index < mTabCounts-1) {
 			tabItems.get(index).setTabIconAlpha(leftAlpha);
 			tabItems.get(index).setTabTextColor(leftColor);
 			tabItems.get(index + 1).setTabIconAlpha(rightAlpha);

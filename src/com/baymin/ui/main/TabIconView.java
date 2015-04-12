@@ -41,7 +41,7 @@ public class TabIconView extends ImageView {
         super.onDraw(canvas);  
         if (mPaint != null) {  
             mPaint.setAlpha(255 - mAlpha);//设置透明度  
-            canvas.drawBitmap(unClickBitmap, null, tabSize, mPaint);  
+            canvas.drawBitmap(unClickBitmap, null, tabSize, mPaint); 
             mPaint.setAlpha(mAlpha);//设置透明度  
             canvas.drawBitmap(clickedBitmap, null, tabSize,mPaint);  
         }  
